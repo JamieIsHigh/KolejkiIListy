@@ -35,15 +35,17 @@ class MainActivity : AppCompatActivity() {
         ksiazki.addAll(listOf("Harry Potter", "Hunger Games"))
         findViewById<TextView>(R.id.textView2).text = ksiazki.peek()
         findViewById<TextView>(R.id.textView3).text = "Długość kolejki: " + ksiazki.size
-        if (!ksiazki.isEmpty()) {
-            ksiazki.removeFirst()
-            if (ksiazki.size == 0) {
-                findViewById<TextView>(R.id.textView2).text = ""
-            }
-            else {
-                findViewById<TextView>(R.id.textView2).text = ksiazki.peek()
-            }
+        findViewById<Button>(R.id.button3).setOnClickListener {
+            if (!ksiazki.isEmpty()) {
+                ksiazki.removeFirst()
+                if (ksiazki.size == 0) {
+                    findViewById<TextView>(R.id.textView2).text = ""
+                }
+                else {
+                    findViewById<TextView>(R.id.textView2).text = ksiazki.peek()
+                }
                 findViewById<TextView>(R.id.textView3).text = "Długość kolejki: " + ksiazki.size
+            }
         }
     }
 }
