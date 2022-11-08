@@ -3,4 +3,6 @@
     <string name="Tekst">Tekst</string>
     <string name="addlist">Dodaj do listy</string>
     <string name="deletelist">Usun z listy</string>
+    <string name="addqueue">Dodaj do kolejki</string>
+    <string name="deletequeue">Usun z kolejki</string>
 </resources>
