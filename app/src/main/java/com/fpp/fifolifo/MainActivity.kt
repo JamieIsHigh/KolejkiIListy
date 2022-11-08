@@ -14,10 +14,17 @@ class MainActivity : AppCompatActivity() {
 
         var mushrooms = Stack<String>()
         mushrooms.addAll(listOf("borowik", "maślak", "kurka"))
-        //findViewById<TextView>(R.id.listView).text = mushrooms.peek()
+        findViewById<TextView>(R.id.listView).text = mushrooms.peek()
 
         findViewById<Button>(R.id.button).setOnClickListener {
             mushrooms.push(findViewById<EditText>(R.id.textInput).text.toString())
+            findViewById<TextView>(R.id.listView).text = mushrooms.peek()
+        }
+        findViewById<Button>(R.id.button2).setOnClickListener {
+            if (!mushrooms.isEmpty()) {
+                mushrooms.pop()
+                findViewById<TextView>(R.id.listView).text = mushrooms.peek()
+            }
         }
     }
 }
