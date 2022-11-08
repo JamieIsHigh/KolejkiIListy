@@ -15,11 +15,12 @@ class MainActivity : AppCompatActivity() {
         var mushrooms = Stack<String>()
         mushrooms.addAll(listOf("borowik", "maślak", "kurka"))
         findViewById<TextView>(R.id.listView).text = mushrooms.peek()
-
+        //dodaj do listy
         findViewById<Button>(R.id.button4).setOnClickListener {
             mushrooms.push(findViewById<EditText>(R.id.textInput).text.toString())
             findViewById<TextView>(R.id.listView).text = mushrooms.peek()
         }
+        //usun z kolejki
         findViewById<Button>(R.id.button2).setOnClickListener {
             if (!mushrooms.isEmpty()) {
                 mushrooms.pop()
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         ksiazki.addAll(listOf("Harry Potter", "Hunger Games"))
         findViewById<TextView>(R.id.textView2).text = ksiazki.peek()
         findViewById<TextView>(R.id.textView3).text = "Długość kolejki: " + ksiazki.size
+        //usun z kolejki
         findViewById<Button>(R.id.button3).setOnClickListener {
             if (!ksiazki.isEmpty()) {
                 ksiazki.removeFirst()
@@ -47,10 +49,12 @@ class MainActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.textView3).text = "Długość kolejki: " + ksiazki.size
             }
         }
+        //dodaj do kolejki
         findViewById<Button>(R.id.button).setOnClickListener {
             ksiazki.push(findViewById<EditText>(R.id.textInput).text.toString())
             findViewById<TextView>(R.id.textView2).text = ksiazki.peek()
             findViewById<TextView>(R.id.textView3).text = "Długość kolejki: " + ksiazki.size
         }
+
     }
 }
