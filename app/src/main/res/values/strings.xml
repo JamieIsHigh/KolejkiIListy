@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FIFOLIFO</string>
+    <string name="Tekst">Tekst</string>
+    <string name="addlist">Dodaj do listy</string>
+    <string name="deletelist">Usun z listy</string>
 </resources>
