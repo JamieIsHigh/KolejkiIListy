@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button2).setOnClickListener {
             if (!mushrooms.isEmpty()) {
                 mushrooms.pop()
-                findViewById<TextView>(R.id.listView).text = mushrooms.peek()
+                if (mushrooms.size == 0) {
+                    findViewById<TextView>(R.id.listView).text = ""
+                } else {
+                    findViewById<TextView>(R.id.listView).text = mushrooms.peek()
+                }
             }
         }
 
@@ -31,5 +35,15 @@ class MainActivity : AppCompatActivity() {
         ksiazki.addAll(listOf("Harry Potter", "Hunger Games"))
         findViewById<TextView>(R.id.textView2).text = ksiazki.peek()
         findViewById<TextView>(R.id.textView3).text = "Długość kolejki: " + ksiazki.size
+        if (!ksiazki.isEmpty()) {
+            ksiazki.removeFirst()
+            if (ksiazki.size == 0) {
+                findViewById<TextView>(R.id.textView2).text = ""
+            }
+            else {
+                findViewById<TextView>(R.id.textView2).text = ksiazki.peek()
+            }
+                findViewById<TextView>(R.id.textView3).text = "Długość kolejki: " + ksiazki.size
+        }
     }
 }
