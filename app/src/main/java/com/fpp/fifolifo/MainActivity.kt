@@ -26,5 +26,9 @@ class MainActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.listView).text = mushrooms.peek()
             }
         }
+
+        var Ksiazki = LinkedList<String>()
+        Ksiazki.addAll(listOf("Harry Potter", "Hunger Games"))
+
     }
 }
