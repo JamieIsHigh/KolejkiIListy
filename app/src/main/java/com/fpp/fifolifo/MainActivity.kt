@@ -27,8 +27,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        var Ksiazki = LinkedList<String>()
-        Ksiazki.addAll(listOf("Harry Potter", "Hunger Games"))
-
+        var ksiazki = LinkedList<String>()
+        ksiazki.addAll(listOf("Harry Potter", "Hunger Games"))
+        findViewById<TextView>(R.id.textView2).text = ksiazki.peek()
+        findViewById<TextView>(R.id.textView3).text = "Długość kolejki: " + ksiazki.size
     }
 }
